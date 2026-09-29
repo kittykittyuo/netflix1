@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">NETFLIX</div>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#peliculas">Películas</a>
+            <a href="#juego">Juego</a>
+        </nav>
+
+    </header>
+
+
+    <main>
+        <audio controls>
+            <source src="audio/cancion.mp3.mp3" type="audio/mpeg">
+        </audio>
+
+        <section id="inicio" class="presentacion">
+
+            <div>
+
+                <h1>Como empezó Netflix con los DVDs</h1>
+
+                <p>
+                    La historia del disco que cambió la industria.
+                    A finales de la década de 1990, alquilar una película significaba
+                    ir físicamente a un videoclub y cruzar los dedos para que la cinta
+                    deseada no estuviera agotada. Además, existía el constante temor
+                    de devolverla tarde y sufrir una multa.
+
+                    En medio de este escenario, en 1997, Reed Hastings y Marc Randolph
+                    fundaron Netflix con una visión completamente diferente: alquilar
+                    películas a través de internet y enviarlas directamente por correo postal.
+
+                    Sin embargo, para que esta idea fuera viable, necesitaban elegir el
+                    soporte físico adecuado, y desde el primer momento descartaron el VHS.
+                    Las cintas de video eran pesadas, ocupaban mucho espacio, encarecían
+                    los costos de envío y se dañaban fácilmente.
+
+                    Justo en ese momento, el DVD comenzó a comercializarse en Estados Unidos.
+                </p>
+
+                <button onclick="irAPeliculas()">
+                    VER PELICULAS
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <section id="peliculas" class="seccion">
+
+            <h2>Peliculas populares</h2>
+
+            <div class="carrusel">
+
+                <button class="flecha izquierda" onclick="moverCarrusel(-1)">
+                    ←
+                </button>
+
+                <div class="peliculas carrusel-peliculas" id="listaPeliculas">
+                </div>
+
+                <button class="flecha derecha" onclick="moverCarrusel(1)">
+                    →
+                </button>
+
+            </div>
+
+
+            <div id="reproductor" class="reproductor">
+
+                <h2 id="tituloVideo"></h2>
+
+                <iframe
+                    id="video"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+        </section>
+
+
+        <section class="seccion">
+
+            <h2>Romance</h2>
+
+            <div class="peliculas" id="listaRomance">
+            </div>
+
+        </section>
+
+
+        <section class="seccion">
+
+            <h2>Comedias</h2>
+
+            <div class="peliculas" id="listaComedias">
+            </div>
+
+        </section>
+
+
+        <section id="juego" class="juego">
+
+            <h2>¿Que pelicula es?</h2>
+
+            <p>Adivina la pelicula mirando las pistas.</p>
+
+            <div class="pregunta" id="pregunta">
+
+                <h3 id="pista">
+                    Cargando pregunta...
+                </h3>
+
+                <div class="opciones">
+
+                    <button onclick="responder(0)" id="opcion0"></button>
+
+                    <button onclick="responder(1)" id="opcion1"></button>
+
+                    <button onclick="responder(2)" id="opcion2"></button>
+
+                </div>
+
+                <p id="resultado"></p>
+
+                <p id="puntaje">
+                    Puntaje: 0
+                </p>
+
+                <button class="siguiente" onclick="siguientePregunta()">
+                    SIGUIENTE
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>Dafne genia Gallegos 🗣️</p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
